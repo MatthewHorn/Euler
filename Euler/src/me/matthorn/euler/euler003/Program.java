@@ -22,6 +22,8 @@ public class Program
 		List<Long> factors = new ArrayList<>();
 		k = 1;
 		
+		long startTime, endTime;
+		startTime = System.currentTimeMillis();
 		while (target != 1)
 		{
 			if (status == PrimeStatus.TWO_ADDED)
@@ -40,7 +42,9 @@ public class Program
 			status = addPrimes();
 		}
 		
+		endTime = System.currentTimeMillis();
 		System.out.println(factors);
+		System.out.printf("Took %d ms.\n", endTime - startTime);
 	}
 	
 	private static PrimeStatus addPrimes()
